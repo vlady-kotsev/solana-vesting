@@ -6,7 +6,7 @@ resolution = true
 skip-lint = false
 
 [programs.localnet]
-tokenvesting = "AsjZ3kWAUSQRNt2pZVeJkywhZ6gpLpHZmJjduPmKZDZZ"
+tokenvesting = "3aZrnm9MmScGeMX49eoqoUeAdwbw21ktmaKwLi16k9gs"
 
 [registry]
 url = "https://api.apr.dev"

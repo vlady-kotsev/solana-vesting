@@ -1,26 +1,29 @@
-'use client'
+"use client";
 
-import { useWallet } from '@solana/wallet-adapter-react'
-import { WalletButton } from '../solana/solana-provider'
-import { AppHero, ellipsify } from '../ui/ui-layout'
-import { ExplorerLink } from '../cluster/cluster-ui'
-import { useTokenvestingProgram } from './tokenvesting-data-access'
-import { TokenvestingCreate, TokenvestingList } from './tokenvesting-ui'
+import { useWallet } from "@solana/wallet-adapter-react";
+import { WalletButton } from "../solana/solana-provider";
+import { AppHero, ellipsify } from "../ui/ui-layout";
+import { ExplorerLink } from "../cluster/cluster-ui";
+import { useTokenvestingProgram } from "./tokenvesting-data-access";
+import { TokenvestingCreate, TokenvestingList } from "./tokenvesting-ui";
 
 export default function TokenvestingFeature() {
-  const { publicKey } = useWallet()
-  const { programId } = useTokenvestingProgram()
+  const { publicKey } = useWallet();
+  const { programId } = useTokenvestingProgram();
 
   return publicKey ? (
     <div>
       <AppHero
-        title="Tokenvesting"
+        title="Token Vesting"
         subtitle={
-          'Create a new account by clicking the "Create" button. The state of a account is stored on-chain and can be manipulated by calling the program\'s methods (increment, decrement, set, and close).'
+          'Create a new employee vesting account by clicking the "Create employee vesting account" button. The state of a employee vesting account is stored on-chain and can be manipulated by calling the program\'s methods (increment, decrement, set, and close).'
         }
       >
         <p className="mb-6">
-          <ExplorerLink path={`account/${programId}`} label={ellipsify(programId.toString())} />
+          <ExplorerLink
+            path={`account/${programId}`}
+            label={ellipsify(programId.toString())}
+          />
         </p>
         <TokenvestingCreate />
       </AppHero>
@@ -34,5 +37,5 @@ export default function TokenvestingFeature() {
         </div>
       </div>
     </div>
-  )
+  );
 }
